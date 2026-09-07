@@ -50,22 +50,22 @@ export const EventFeed = () => {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '10px',
-                padding: '5px 8px',
+                padding: '6px 10px',
                 borderRadius: 'var(--radius-sm)',
-                backgroundColor: 'rgba(5, 12, 22, 0.65)',
-                border: '1px solid rgba(255, 255, 255, 0.04)',
+                backgroundColor: 'var(--bg-inset)',
+                border: '1px solid var(--border-subtle)',
                 fontFamily: 'var(--font-mono)',
                 fontSize: '11px',
                 lineHeight: 1.3
               }}
             >
-              <span style={{ color: 'var(--text-dim)', flexShrink: 0, fontSize: '10px' }}>
+              <span style={{ color: 'var(--text-muted)', flexShrink: 0, fontSize: '10px' }}>
                 [{evt.time}]
               </span>
 
               <Icon size={12} color={badgeColor} style={{ flexShrink: 0 }} />
 
-              <span style={{ color: evt.type === 'danger' ? '#fca5a5' : evt.type === 'warning' ? '#fde047' : '#e2e8f0' }}>
+              <span style={{ color: evt.type === 'danger' ? 'var(--accent-red)' : evt.type === 'warning' ? 'var(--accent-amber)' : 'var(--text-primary)' }}>
                 {evt.label}
               </span>
             </div>

@@ -26,7 +26,7 @@ export const FleetPage = () => {
       {/* Page Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px' }}>
         <div>
-          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 700, color: '#ffffff' }}>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)' }}>
             Fleet Telemetry & Vessel Tracking
           </h2>
           <p style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>
@@ -57,7 +57,7 @@ export const FleetPage = () => {
       }}>
         <div className="q-card" style={{ padding: '12px' }}>
           <div style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>TOTAL FLEET ASSETS</div>
-          <div style={{ fontSize: '22px', fontFamily: 'var(--font-display)', fontWeight: 700, color: '#ffffff' }}>6 VESSELS</div>
+          <div style={{ fontSize: '22px', fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--text-primary)' }}>6 VESSELS</div>
           <div style={{ fontSize: '10px', color: 'var(--accent-cyan)' }}>100% AIS Connected</div>
         </div>
 
@@ -94,7 +94,7 @@ export const FleetPage = () => {
             <div
               key={v.id}
               onClick={() => setSelectedVessel(v)}
-              className={`q-card ${isActiveInConfig ? 'glow-cyan' : ''}`}
+              className="q-card"
               style={{
                 cursor: 'pointer',
                 display: 'flex',
@@ -110,7 +110,7 @@ export const FleetPage = () => {
                   <div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <Ship size={16} color="var(--accent-cyan)" />
-                      <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '16px', fontWeight: 700, color: '#ffffff' }}>
+                      <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '16px', fontWeight: 700, color: 'var(--text-primary)' }}>
                         {v.name}
                       </h3>
                     </div>
@@ -127,7 +127,8 @@ export const FleetPage = () => {
                 {/* Telemetry rows */}
                 <div style={{
                   padding: '10px',
-                  backgroundColor: 'rgba(5, 12, 22, 0.65)',
+                  backgroundColor: 'var(--bg-inset)',
+                  border: '1px solid var(--border-subtle)',
                   borderRadius: 'var(--radius-md)',
                   margin: '10px 0',
                   display: 'flex',
@@ -138,12 +139,12 @@ export const FleetPage = () => {
                 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span style={{ color: 'var(--text-muted)' }}>DWT:</span>
-                    <span style={{ color: '#ffffff' }}>{v.deadweight}</span>
+                    <span style={{ color: 'var(--text-primary)' }}>{v.deadweight}</span>
                   </div>
 
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span style={{ color: 'var(--text-muted)' }}>Speed (Eco / Max):</span>
-                    <span style={{ color: '#ffffff' }}>{v.economicalSpeed} / {v.maxSpeed} kn</span>
+                    <span style={{ color: 'var(--text-primary)' }}>{v.economicalSpeed} / {v.maxSpeed} kn</span>
                   </div>
 
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -153,7 +154,7 @@ export const FleetPage = () => {
 
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span style={{ color: 'var(--text-muted)' }}>CII Baseline:</span>
-                    <span style={{ color: v.ciiRating === 'A' ? 'var(--accent-green)' : '#38bdf8', fontWeight: 700 }}>
+                    <span style={{ color: v.ciiRating === 'A' ? 'var(--accent-green)' : 'var(--accent-cyan)', fontWeight: 700 }}>
                       {v.ciiBaseline} (Rating {v.ciiRating})
                     </span>
                   </div>
@@ -172,7 +173,8 @@ export const FleetPage = () => {
                       fontFamily: 'var(--font-mono)',
                       padding: '2px 6px',
                       borderRadius: '3px',
-                      backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                      backgroundColor: 'var(--bg-inset)',
+                      border: '1px solid var(--border-subtle)',
                       color: 'var(--text-secondary)'
                     }}>
                       {f}

@@ -23,7 +23,7 @@ export const VoyageOptimizer = () => {
       {/* Page Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
-          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 700, color: '#ffffff' }}>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)' }}>
             Multi-Scenario Voyage Optimizer
           </h2>
           <p style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>
@@ -71,7 +71,7 @@ export const VoyageOptimizer = () => {
             return (
               <div
                 key={service.id}
-                className={`q-card ${isSelected ? 'glow-cyan' : ''}`}
+                className="q-card"
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
@@ -83,7 +83,7 @@ export const VoyageOptimizer = () => {
                 <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '10px' }}>
                     <div>
-                      <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '15px', fontWeight: 700, color: '#ffffff' }}>
+                      <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '15px', fontWeight: 700, color: 'var(--text-primary)' }}>
                         {service.name}
                       </h3>
                       <div style={{ fontSize: '10px', color: 'var(--accent-cyan)', fontFamily: 'var(--font-mono)' }}>
@@ -104,8 +104,9 @@ export const VoyageOptimizer = () => {
 
                   {/* Metrics Table */}
                   <div style={{
-                    backgroundColor: 'rgba(5, 12, 22, 0.7)',
+                    backgroundColor: 'var(--bg-inset)',
                     borderRadius: 'var(--radius-md)',
+                    border: '1px solid var(--border-subtle)',
                     padding: '10px 12px',
                     display: 'flex',
                     flexDirection: 'column',
@@ -115,7 +116,7 @@ export const VoyageOptimizer = () => {
                   }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                       <span style={{ color: 'var(--text-muted)' }}>Target Speed:</span>
-                      <span style={{ color: '#ffffff', fontWeight: 600 }}>{candidate.speed} kn</span>
+                      <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{candidate.speed} kn</span>
                     </div>
 
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -130,19 +131,19 @@ export const VoyageOptimizer = () => {
 
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                       <span style={{ color: 'var(--text-muted)' }}>Predicted CII:</span>
-                      <span style={{ color: candidate.ciiRating === 'A' ? 'var(--accent-green)' : '#38bdf8', fontWeight: 700 }}>
+                      <span style={{ color: candidate.ciiRating === 'A' ? 'var(--accent-green)' : 'var(--accent-cyan)', fontWeight: 700 }}>
                         {candidate.cii} ({candidate.ciiRating})
                       </span>
                     </div>
 
-                    <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '4px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '4px', borderTop: '1px solid var(--border-subtle)' }}>
                       <span style={{ color: 'var(--text-muted)' }}>Total Cost:</span>
                       <span style={{ color: 'var(--accent-cyan)', fontWeight: 700 }}>₹{candidate.totalCost.toLocaleString()}</span>
                     </div>
 
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                       <span style={{ color: 'var(--text-muted)' }}>Arrival ETA:</span>
-                      <span style={{ color: '#ffffff', fontSize: '10px' }}>{candidate.etaDate}</span>
+                      <span style={{ color: 'var(--text-primary)', fontSize: '10px' }}>{candidate.etaDate}</span>
                     </div>
                   </div>
                 </div>

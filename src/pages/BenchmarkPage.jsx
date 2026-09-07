@@ -18,14 +18,14 @@ export const BenchmarkPage = () => {
               ALGORITHMIC CONVERGENCE & METRIC VALIDATION
             </span>
           </div>
-          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 700, color: '#ffffff', marginTop: '4px' }}>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)', marginTop: '4px' }}>
             Classical vs Quantum-Inspired Benchmarks
           </h2>
         </div>
 
         <div style={{
           padding: '6px 12px',
-          backgroundColor: 'rgba(5, 12, 22, 0.8)',
+          backgroundColor: 'var(--bg-inset)',
           border: '1px solid var(--border-subtle)',
           borderRadius: 'var(--radius-sm)',
           fontFamily: 'var(--font-mono)',
@@ -39,7 +39,7 @@ export const BenchmarkPage = () => {
       {/* Production Note Banner */}
       <div style={{
         padding: '10px 14px',
-        backgroundColor: 'rgba(0, 240, 255, 0.06)',
+        backgroundColor: 'var(--accent-cyan-dim)',
         borderLeft: '3px solid var(--accent-cyan)',
         borderRadius: 'var(--radius-sm)',
         fontFamily: 'var(--font-mono)',
@@ -72,7 +72,7 @@ export const BenchmarkPage = () => {
         <div style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-mono)', fontSize: '11.5px' }}>
             <thead>
-              <tr style={{ backgroundColor: 'rgba(255, 255, 255, 0.04)', borderBottom: '1px solid var(--border-subtle)', color: 'var(--text-muted)' }}>
+              <tr style={{ backgroundColor: 'var(--bg-inset)', borderBottom: '1px solid var(--border-subtle)', color: 'var(--text-muted)' }}>
                 <th style={{ padding: '10px 14px', textAlign: 'left' }}>MODEL ARCHITECTURE</th>
                 <th style={{ padding: '10px 14px', textAlign: 'left' }}>CATEGORY</th>
                 <th style={{ padding: '10px 14px', textAlign: 'right' }}>MAE</th>
@@ -90,17 +90,17 @@ export const BenchmarkPage = () => {
                   <tr
                     key={idx}
                     style={{
-                      borderBottom: '1px solid rgba(255, 255, 255, 0.04)',
-                      backgroundColor: isQ ? 'rgba(0, 240, 255, 0.06)' : 'transparent'
+                      borderBottom: '1px solid var(--border-subtle)',
+                      backgroundColor: isQ ? 'var(--accent-cyan-dim)' : 'transparent'
                     }}
                   >
-                    <td style={{ padding: '10px 14px', color: isQ ? 'var(--accent-cyan)' : '#ffffff', fontWeight: isQ ? 700 : 500 }}>
+                    <td style={{ padding: '10px 14px', color: isQ ? 'var(--accent-cyan)' : 'var(--text-primary)', fontWeight: isQ ? 700 : 500 }}>
                       {m.name}
                     </td>
                     <td style={{ padding: '10px 14px', color: 'var(--text-secondary)' }}>{m.category}</td>
-                    <td style={{ padding: '10px 14px', textAlign: 'right', fontWeight: 600, color: isQ ? 'var(--accent-green)' : '#ffffff' }}>{m.mae}</td>
-                    <td style={{ padding: '10px 14px', textAlign: 'right', color: isQ ? 'var(--accent-green)' : '#ffffff' }}>{m.rmse}</td>
-                    <td style={{ padding: '10px 14px', textAlign: 'right', fontWeight: 700, color: isQ ? 'var(--accent-cyan)' : '#ffffff' }}>{m.r2}</td>
+                    <td style={{ padding: '10px 14px', textAlign: 'right', fontWeight: 600, color: isQ ? 'var(--accent-green)' : 'var(--text-primary)' }}>{m.mae}</td>
+                    <td style={{ padding: '10px 14px', textAlign: 'right', color: isQ ? 'var(--accent-green)' : 'var(--text-primary)' }}>{m.rmse}</td>
+                    <td style={{ padding: '10px 14px', textAlign: 'right', fontWeight: 700, color: isQ ? 'var(--accent-cyan)' : 'var(--text-primary)' }}>{m.r2}</td>
                     <td style={{ padding: '10px 14px', textAlign: 'right', color: 'var(--text-secondary)' }}>{m.predictionRuntime}</td>
                     <td style={{ padding: '10px 14px', color: 'var(--text-muted)', fontSize: '10.5px' }}>{m.notes}</td>
                   </tr>
@@ -113,7 +113,7 @@ export const BenchmarkPage = () => {
         <div style={{
           marginTop: '12px',
           padding: '8px 12px',
-          backgroundColor: 'rgba(0, 229, 163, 0.08)',
+          backgroundColor: 'var(--accent-green-dim)',
           borderRadius: 'var(--radius-sm)',
           fontSize: '11px',
           color: 'var(--accent-green)',
@@ -142,7 +142,7 @@ export const BenchmarkPage = () => {
         <div style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-mono)', fontSize: '11.5px' }}>
             <thead>
-              <tr style={{ backgroundColor: 'rgba(255, 255, 255, 0.04)', borderBottom: '1px solid var(--border-subtle)', color: 'var(--text-muted)' }}>
+              <tr style={{ backgroundColor: 'var(--bg-inset)', borderBottom: '1px solid var(--border-subtle)', color: 'var(--text-muted)' }}>
                 <th style={{ padding: '10px 14px', textAlign: 'left' }}>SOLVER ALGORITHM</th>
                 <th style={{ padding: '10px 14px', textAlign: 'left' }}>PARADIGM</th>
                 <th style={{ padding: '10px 14px', textAlign: 'right' }}>SOLUTION COST</th>
@@ -160,17 +160,17 @@ export const BenchmarkPage = () => {
                   <tr
                     key={idx}
                     style={{
-                      borderBottom: '1px solid rgba(255, 255, 255, 0.04)',
-                      backgroundColor: isQ ? 'rgba(0, 240, 255, 0.06)' : 'transparent'
+                      borderBottom: '1px solid var(--border-subtle)',
+                      backgroundColor: isQ ? 'var(--accent-cyan-dim)' : 'transparent'
                     }}
                   >
-                    <td style={{ padding: '10px 14px', color: isQ ? 'var(--accent-cyan)' : '#ffffff', fontWeight: isQ ? 700 : 500 }}>
+                    <td style={{ padding: '10px 14px', color: isQ ? 'var(--accent-cyan)' : 'var(--text-primary)', fontWeight: isQ ? 700 : 500 }}>
                       {s.name}
                     </td>
                     <td style={{ padding: '10px 14px', color: 'var(--text-secondary)' }}>{s.type}</td>
-                    <td style={{ padding: '10px 14px', textAlign: 'right', fontWeight: 600, color: isQ ? 'var(--accent-green)' : '#ffffff' }}>{s.solutionCostUSD}</td>
-                    <td style={{ padding: '10px 14px', textAlign: 'right', color: isQ ? 'var(--accent-green)' : '#ffffff' }}>{s.co2Tonnes}</td>
-                    <td style={{ padding: '10px 14px', textAlign: 'right', fontWeight: 700, color: isQ ? 'var(--accent-cyan)' : '#ffffff' }}>{s.runtimeSec}</td>
+                    <td style={{ padding: '10px 14px', textAlign: 'right', fontWeight: 600, color: isQ ? 'var(--accent-green)' : 'var(--text-primary)' }}>{s.solutionCostUSD}</td>
+                    <td style={{ padding: '10px 14px', textAlign: 'right', color: isQ ? 'var(--accent-green)' : 'var(--text-primary)' }}>{s.co2Tonnes}</td>
+                    <td style={{ padding: '10px 14px', textAlign: 'right', fontWeight: 700, color: isQ ? 'var(--accent-cyan)' : 'var(--text-primary)' }}>{s.runtimeSec}</td>
                     <td style={{ padding: '10px 14px', textAlign: 'right', color: 'var(--accent-green)' }}>{s.constraintViolations}</td>
                     <td style={{ padding: '10px 14px', color: 'var(--text-muted)', fontSize: '10.5px' }}>{s.scalabilityLimit}</td>
                   </tr>
@@ -183,7 +183,7 @@ export const BenchmarkPage = () => {
         <div style={{
           marginTop: '12px',
           padding: '8px 12px',
-          backgroundColor: 'rgba(0, 240, 255, 0.08)',
+          backgroundColor: 'var(--accent-cyan-dim)',
           borderRadius: 'var(--radius-sm)',
           fontSize: '11px',
           color: 'var(--accent-cyan)',

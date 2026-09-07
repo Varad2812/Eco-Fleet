@@ -60,7 +60,7 @@ export const MetoceanPanel = () => {
         <div style={{
           width: '100%',
           height: '3px',
-          backgroundColor: 'rgba(255, 255, 255, 0.08)',
+          backgroundColor: 'var(--border-subtle)',
           borderRadius: '2px',
           overflow: 'hidden'
         }}>
@@ -82,7 +82,7 @@ export const MetoceanPanel = () => {
         {/* Wind Speed & Direction */}
         <div style={{
           padding: '10px',
-          backgroundColor: 'rgba(5, 12, 22, 0.6)',
+          backgroundColor: 'var(--bg-inset)',
           border: '1px solid var(--border-subtle)',
           borderRadius: 'var(--radius-md)'
         }}>
@@ -102,7 +102,7 @@ export const MetoceanPanel = () => {
             fontFamily: 'var(--font-display)',
             fontSize: '18px',
             fontWeight: 700,
-            color: '#ffffff'
+            color: 'var(--text-primary)'
           }}>
             {currentWeather.windSpeedKn} <span style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', color: 'var(--accent-cyan)' }}>kn</span>
           </div>
@@ -123,7 +123,7 @@ export const MetoceanPanel = () => {
         {/* Significant Wave Height & Direction */}
         <div style={{
           padding: '10px',
-          backgroundColor: 'rgba(5, 12, 22, 0.6)',
+          backgroundColor: 'var(--bg-inset)',
           border: '1px solid var(--border-subtle)',
           borderRadius: 'var(--radius-md)'
         }}>
@@ -143,7 +143,7 @@ export const MetoceanPanel = () => {
             fontFamily: 'var(--font-display)',
             fontSize: '18px',
             fontWeight: 700,
-            color: currentWeather.waveHeightM > 3.0 ? 'var(--accent-amber)' : '#ffffff'
+            color: currentWeather.waveHeightM > 3.0 ? 'var(--accent-amber)' : 'var(--text-primary)'
           }}>
             {currentWeather.waveHeightM} <span style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', color: 'var(--accent-marine)' }}>m (Hs)</span>
           </div>
@@ -164,7 +164,7 @@ export const MetoceanPanel = () => {
         {/* Ocean Surface Current */}
         <div style={{
           padding: '10px',
-          backgroundColor: 'rgba(5, 12, 22, 0.6)',
+          backgroundColor: 'var(--bg-inset)',
           border: '1px solid var(--border-subtle)',
           borderRadius: 'var(--radius-md)'
         }}>
@@ -184,7 +184,7 @@ export const MetoceanPanel = () => {
             fontFamily: 'var(--font-display)',
             fontSize: '18px',
             fontWeight: 700,
-            color: '#ffffff'
+            color: 'var(--text-primary)'
           }}>
             {currentWeather.currentKn} <span style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', color: 'var(--accent-green)' }}>kn</span>
           </div>
@@ -201,7 +201,7 @@ export const MetoceanPanel = () => {
         {/* Sea State */}
         <div style={{
           padding: '10px',
-          backgroundColor: 'rgba(5, 12, 22, 0.6)',
+          backgroundColor: 'var(--bg-inset)',
           border: '1px solid var(--border-subtle)',
           borderRadius: 'var(--radius-md)'
         }}>
@@ -221,7 +221,7 @@ export const MetoceanPanel = () => {
             fontFamily: 'var(--font-display)',
             fontSize: '16px',
             fontWeight: 700,
-            color: currentWeather.seaStateCode >= 5 ? '#f97316' : '#38bdf8'
+            color: currentWeather.seaStateCode >= 5 ? 'var(--accent-amber)' : 'var(--accent-cyan)'
           }}>
             {currentWeather.seaState}
           </div>
@@ -238,7 +238,7 @@ export const MetoceanPanel = () => {
         {/* Visibility */}
         <div style={{
           padding: '10px',
-          backgroundColor: 'rgba(5, 12, 22, 0.6)',
+          backgroundColor: 'var(--bg-inset)',
           border: '1px solid var(--border-subtle)',
           borderRadius: 'var(--radius-md)'
         }}>
@@ -258,7 +258,7 @@ export const MetoceanPanel = () => {
             fontFamily: 'var(--font-display)',
             fontSize: '18px',
             fontWeight: 700,
-            color: '#ffffff'
+            color: 'var(--text-primary)'
           }}>
             {currentWeather.visibilityNm} <span style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>nm</span>
           </div>
@@ -277,7 +277,7 @@ export const MetoceanPanel = () => {
       <div style={{
         marginTop: '10px',
         padding: '6px 10px',
-        backgroundColor: 'rgba(0, 240, 255, 0.05)',
+        backgroundColor: 'var(--accent-cyan-dim)',
         borderLeft: '2px solid var(--accent-cyan)',
         fontFamily: 'var(--font-mono)',
         fontSize: '10.5px',

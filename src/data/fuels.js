@@ -14,7 +14,7 @@ export const FUELS = [
     ciiComplianceBonus: "+18%",
     recommendation: "OPTIMAL COMMODITY",
     bestFor: "Deep-sea long haul with dual-fuel infrastructure",
-    color: "#00f0ff",
+    color: "#38bdf8",
     badge: "LOW SOx / -24% CO₂"
   },
   {
@@ -32,7 +32,7 @@ export const FUELS = [
     ciiComplianceBonus: "+42%",
     recommendation: "BEST GREEN BALANCE",
     bestFor: "Strict IMO 2030 CII target routes & green corridors",
-    color: "#00e5a3",
+    color: "#10b981",
     badge: "IMO 2030 READY"
   },
   {
@@ -50,7 +50,7 @@ export const FUELS = [
     ciiComplianceBonus: "+65%",
     recommendation: "NET-ZERO PIONEER",
     bestFor: "Dedicated zero-emission coastal and green bunker lanes",
-    color: "#7000ff",
+    color: "#8b5cf6",
     badge: "ZERO CARBON DIRECT"
   },
   {

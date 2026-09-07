@@ -21,7 +21,7 @@ export const CIIPage = () => {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
       {/* Page Header */}
       <div>
-        <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 700, color: '#ffffff' }}>
+        <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)' }}>
           IMO Decarbonization & Carbon Intensity Indicator (CII) Compliance
         </h2>
         <p style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>
@@ -57,13 +57,13 @@ export const CIIPage = () => {
                 key={ry.year}
                 style={{
                   padding: '12px',
-                  backgroundColor: isTarget ? 'rgba(0, 240, 255, 0.1)' : 'rgba(5, 12, 22, 0.65)',
+                  backgroundColor: isTarget ? 'var(--accent-cyan-dim)' : 'var(--bg-inset)',
                   border: isTarget ? '1.5px solid var(--accent-cyan)' : '1px solid var(--border-subtle)',
                   borderRadius: 'var(--radius-md)',
                   textAlign: 'center'
                 }}
               >
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '16px', fontWeight: 700, color: isTarget ? 'var(--accent-cyan)' : '#ffffff' }}>
+                <div style={{ fontFamily: 'var(--font-display)', fontSize: '16px', fontWeight: 700, color: isTarget ? 'var(--accent-cyan)' : 'var(--text-primary)' }}>
                   {ry.year}
                 </div>
                 <div style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: 'var(--accent-green)', fontWeight: 600, marginTop: '2px' }}>
@@ -96,7 +96,7 @@ export const CIIPage = () => {
         <div style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-mono)', fontSize: '11.5px' }}>
             <thead>
-              <tr style={{ backgroundColor: 'rgba(255, 255, 255, 0.04)', borderBottom: '1px solid var(--border-subtle)', color: 'var(--text-muted)' }}>
+              <tr style={{ backgroundColor: 'var(--bg-card-hover)', borderBottom: '1px solid var(--border-subtle)', color: 'var(--text-muted)' }}>
                 <th style={{ padding: '10px 14px', textAlign: 'left' }}>VESSEL</th>
                 <th style={{ padding: '10px 14px', textAlign: 'left' }}>CATEGORY</th>
                 <th style={{ padding: '10px 14px', textAlign: 'right' }}>DEADWEIGHT</th>
@@ -107,12 +107,12 @@ export const CIIPage = () => {
             </thead>
             <tbody>
               {VESSELS.map((v) => (
-                <tr key={v.id} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.04)' }}>
-                  <td style={{ padding: '10px 14px', color: '#ffffff', fontWeight: 600 }}>{v.name}</td>
+                <tr key={v.id} style={{ borderBottom: '1px solid var(--border-subtle)' }}>
+                  <td style={{ padding: '10px 14px', color: 'var(--text-primary)', fontWeight: 600 }}>{v.name}</td>
                   <td style={{ padding: '10px 14px', color: 'var(--text-secondary)' }}>{v.category}</td>
                   <td style={{ padding: '10px 14px', textAlign: 'right' }}>{v.deadweight}</td>
                   <td style={{ padding: '10px 14px', textAlign: 'right' }}>{v.ciiBaseline}</td>
-                  <td style={{ padding: '10px 14px', textAlign: 'right', fontWeight: 700, color: v.ciiRating === 'A' ? 'var(--accent-green)' : '#38bdf8' }}>
+                  <td style={{ padding: '10px 14px', textAlign: 'right', fontWeight: 700, color: v.ciiRating === 'A' ? 'var(--accent-green)' : 'var(--accent-cyan)' }}>
                     Rating {v.ciiRating}
                   </td>
                   <td style={{ padding: '10px 14px', textAlign: 'center' }}>

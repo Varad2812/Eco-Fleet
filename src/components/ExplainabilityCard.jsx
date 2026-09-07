@@ -45,7 +45,7 @@ export const ExplainabilityCard = () => {
                   fontSize: '11px',
                   marginBottom: '3px'
                 }}>
-                  <span style={{ color: '#ffffff' }}>{driver.factor}</span>
+                  <span style={{ color: 'var(--text-primary)' }}>{driver.factor}</span>
                   <span style={{ color: 'var(--accent-cyan)', fontWeight: 600 }}>{driver.impact}</span>
                 </div>
 
@@ -53,16 +53,14 @@ export const ExplainabilityCard = () => {
                 <div style={{
                   width: '100%',
                   height: '6px',
-                  backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                  backgroundColor: 'var(--border-subtle)',
                   borderRadius: '3px',
                   overflow: 'hidden'
                 }}>
                   <div style={{
                     width: `${driver.score}%`,
                     height: '100%',
-                    background: idx === 0 
-                      ? 'linear-gradient(90deg, #00f0ff 0%, #0284c7 100%)' 
-                      : 'linear-gradient(90deg, #38bdf8 0%, #00e5a3 100%)',
+                    backgroundColor: idx === 0 ? 'var(--accent-cyan)' : 'var(--accent-green)',
                     borderRadius: '3px'
                   }} />
                 </div>
@@ -95,7 +93,7 @@ export const ExplainabilityCard = () => {
             flexDirection: 'column',
             gap: '8px',
             padding: '12px 14px',
-            backgroundColor: 'rgba(5, 12, 22, 0.65)',
+            backgroundColor: 'var(--bg-inset)',
             border: '1px solid var(--border-subtle)',
             borderRadius: 'var(--radius-md)'
           }}>

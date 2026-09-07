@@ -19,7 +19,7 @@ export const SettingsPage = () => {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '800px' }}>
       {/* Page Header */}
       <div>
-        <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 700, color: '#ffffff' }}>
+        <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)' }}>
           Platform & Optimization Governance
         </h2>
         <p style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>
@@ -136,21 +136,21 @@ export const SettingsPage = () => {
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontFamily: 'var(--font-mono)', fontSize: '11px' }}>
-          <div style={{ padding: '8px 10px', backgroundColor: 'rgba(5, 12, 22, 0.7)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
+          <div style={{ padding: '8px 10px', backgroundColor: 'var(--bg-inset)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
             <div style={{ color: 'var(--accent-cyan)', fontWeight: 600 }}>POST /api/optimize</div>
             <div style={{ color: 'var(--text-muted)', fontSize: '10px', marginTop: '2px' }}>
               Bounded to local deterministic QEA optimization service (ready for HPC backend worker).
             </div>
           </div>
 
-          <div style={{ padding: '8px 10px', backgroundColor: 'rgba(5, 12, 22, 0.7)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
+          <div style={{ padding: '8px 10px', backgroundColor: 'var(--bg-inset)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
             <div style={{ color: 'var(--accent-cyan)', fontWeight: 600 }}>GET /api/weather</div>
             <div style={{ color: 'var(--text-muted)', fontSize: '10px', marginTop: '2px' }}>
               Connected to continuous NOAA / ECMWF MetOcean satellite telemetry & oceanic buoy stream.
             </div>
           </div>
 
-          <div style={{ padding: '8px 10px', backgroundColor: 'rgba(5, 12, 22, 0.7)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
+          <div style={{ padding: '8px 10px', backgroundColor: 'var(--bg-inset)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
             <div style={{ color: 'var(--accent-cyan)', fontWeight: 600 }}>POST /api/reoptimize</div>
             <div style={{ color: 'var(--text-muted)', fontSize: '10px', marginTop: '2px' }}>
               Dynamic weather incident detour solver service ready for distributed container execution.

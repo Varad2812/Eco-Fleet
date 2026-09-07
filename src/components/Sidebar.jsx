@@ -51,21 +51,22 @@ export const Sidebar = () => {
               width: '32px',
               height: '32px',
               borderRadius: '8px',
-              background: 'linear-gradient(135deg, #00f0ff 0%, #0066ff 100%)',
+              background: 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              boxShadow: '0 0 14px rgba(0, 240, 255, 0.4)'
+              boxShadow: '0 2px 10px rgba(2, 132, 199, 0.35)',
+              border: '1px solid rgba(56, 189, 248, 0.3)'
             }}>
-              <Layers size={18} color="#050c18" strokeWidth={2.4} />
+              <Layers size={18} color="#ffffff" strokeWidth={2.2} />
             </div>
-            <div>
+              <div>
               <div style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: '17px',
                 fontWeight: 800,
                 letterSpacing: '0.08em',
-                color: '#ffffff',
+                color: 'var(--text-primary)',
                 lineHeight: 1.1
               }}>
                 ECO-FLEET
@@ -101,9 +102,9 @@ export const Sidebar = () => {
                   padding: '9px 12px',
                   borderRadius: 'var(--radius-md)',
                   background: isActive 
-                    ? 'linear-gradient(90deg, rgba(0, 240, 255, 0.16) 0%, rgba(0, 240, 255, 0.04) 100%)' 
+                    ? 'var(--accent-cyan-dim)' 
                     : 'transparent',
-                  border: isActive ? '1px solid rgba(0, 240, 255, 0.35)' : '1px solid transparent',
+                  border: isActive ? '1px solid var(--border-bright)' : '1px solid transparent',
                   color: isActive ? 'var(--accent-cyan)' : 'var(--text-secondary)',
                   cursor: 'pointer',
                   textAlign: 'left',
@@ -112,8 +113,8 @@ export const Sidebar = () => {
                 }}
                 onMouseEnter={(e) => {
                   if (!isActive) {
-                    e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.04)';
-                    e.currentTarget.style.color = '#ffffff';
+                    e.currentTarget.style.backgroundColor = 'var(--bg-card-hover)';
+                    e.currentTarget.style.color = 'var(--text-primary)';
                   }
                 }}
                 onMouseLeave={(e) => {
@@ -144,7 +145,7 @@ export const Sidebar = () => {
                     fontFamily: 'var(--font-mono)',
                     padding: '2px 5px',
                     borderRadius: '3px',
-                    background: isActive ? 'rgba(0, 240, 255, 0.2)' : 'rgba(255, 255, 255, 0.06)',
+                    background: isActive ? 'var(--bg-card)' : 'var(--bg-inset)',
                     color: isActive ? 'var(--accent-cyan)' : 'var(--text-muted)'
                   }}>
                     {item.badge}
@@ -160,7 +161,7 @@ export const Sidebar = () => {
       <div style={{
         padding: '14px 14px',
         margin: '10px',
-        backgroundColor: 'rgba(5, 10, 18, 0.8)',
+        backgroundColor: 'var(--bg-inset)',
         border: '1px solid var(--border-subtle)',
         borderRadius: 'var(--radius-md)'
       }}>
@@ -183,17 +184,17 @@ export const Sidebar = () => {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', fontSize: '11px', fontFamily: 'var(--font-mono)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)' }}>
             <span className="status-dot green pulse" />
-            <span>QEA Solver: <strong style={{ color: '#4ade80' }}>ONLINE</strong></span>
+            <span>QEA Solver: <strong style={{ color: 'var(--accent-green)' }}>ONLINE</strong></span>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)' }}>
             <span className="status-dot cyan pulse" />
-            <span>Weather Feed: <strong style={{ color: '#38bdf8' }}>30s CYCLE</strong></span>
+            <span>Weather Feed: <strong style={{ color: 'var(--accent-cyan)' }}>30s CYCLE</strong></span>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)' }}>
             <span className="status-dot green" />
-            <span>Fleet Synced: <strong style={{ color: '#4ade80' }}>6/6 ACTIVE</strong></span>
+            <span>Fleet Synced: <strong style={{ color: 'var(--accent-green)' }}>6/6 ACTIVE</strong></span>
           </div>
         </div>
       </div>

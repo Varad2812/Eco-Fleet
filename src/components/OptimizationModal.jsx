@@ -26,14 +26,14 @@ export const OptimizationModal = () => {
           display: 'flex',
           alignItems: 'center',
           gap: '10px',
-          background: 'rgba(11, 20, 36, 0.9)'
+          background: 'var(--bg-card)'
         }}>
           <div style={{
             width: '32px',
             height: '32px',
             borderRadius: '8px',
-            backgroundColor: 'rgba(0, 240, 255, 0.18)',
-            border: '1px solid var(--accent-cyan)',
+            backgroundColor: 'var(--accent-cyan-dim)',
+            border: '1px solid var(--border-bright)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -46,7 +46,7 @@ export const OptimizationModal = () => {
               fontFamily: 'var(--font-display)',
               fontSize: '15px',
               fontWeight: 700,
-              color: '#ffffff',
+              color: 'var(--text-primary)',
               letterSpacing: '0.04em'
             }}>
               QEA VOYAGE OPTIMIZATION SOLVER
@@ -82,8 +82,8 @@ export const OptimizationModal = () => {
                     justifyContent: 'space-between',
                     padding: '8px 12px',
                     borderRadius: 'var(--radius-md)',
-                    backgroundColor: isCurrent ? 'rgba(0, 240, 255, 0.08)' : isCompleted ? 'rgba(0, 229, 163, 0.06)' : 'rgba(255, 255, 255, 0.02)',
-                    border: isCurrent ? '1px solid var(--border-bright)' : isCompleted ? '1px solid rgba(0, 229, 163, 0.3)' : '1px solid var(--border-subtle)',
+                    backgroundColor: isCurrent ? 'var(--accent-cyan-dim)' : isCompleted ? 'var(--accent-green-dim)' : 'var(--bg-inset)',
+                    border: isCurrent ? '1px solid var(--border-bright)' : isCompleted ? '1px solid var(--accent-green)' : '1px solid var(--border-subtle)',
                     transition: 'all 0.2s ease'
                   }}
                 >
@@ -98,7 +98,7 @@ export const OptimizationModal = () => {
                     <span style={{
                       fontFamily: 'var(--font-mono)',
                       fontSize: '11.5px',
-                      color: isCompleted ? '#ffffff' : isCurrent ? 'var(--accent-cyan)' : 'var(--text-dim)',
+                      color: isCompleted ? 'var(--text-primary)' : isCurrent ? 'var(--accent-cyan)' : 'var(--text-dim)',
                       fontWeight: isCurrent ? 600 : 400
                     }}>
                       {text}
@@ -122,14 +122,14 @@ export const OptimizationModal = () => {
             <div style={{
               width: '100%',
               height: '4px',
-              backgroundColor: 'rgba(255, 255, 255, 0.08)',
+              backgroundColor: 'var(--border-subtle)',
               borderRadius: '2px',
               overflow: 'hidden'
             }}>
               <div style={{
                 width: `${(optStage / STAGES.length) * 100}%`,
                 height: '100%',
-                background: 'linear-gradient(90deg, #00f0ff 0%, #00e5a3 100%)',
+                background: 'linear-gradient(90deg, #0284c7 0%, #059669 100%)',
                 transition: 'width 0.35s ease'
               }} />
             </div>

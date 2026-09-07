@@ -40,11 +40,11 @@ export const StormSimulator = () => {
   };
 
   const intensityOptions = [
-    { key: "none", label: "None", color: "#00e5a3", desc: "Nominal MetOcean" },
+    { key: "none", label: "None", color: "#10b981", desc: "Nominal MetOcean" },
     { key: "low", label: "Low", color: "#fbbf24", desc: "Advisory Swell (<3.5m)" },
     { key: "moderate", label: "Moderate", color: "#f97316", desc: "Depression (4.5m)" },
     { key: "severe", label: "Severe", color: "#ef4444", desc: "Severe Cyclone (6.4m)" },
-    { key: "extreme", label: "Extreme", color: "#d946ef", desc: "Super Cyclone (7.8m)" }
+    { key: "extreme", label: "Extreme", color: "#a855f7", desc: "Super Cyclone (7.8m)" }
   ];
 
   return (
@@ -61,19 +61,19 @@ export const StormSimulator = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          background: 'rgba(11, 20, 36, 0.9)'
+          background: 'var(--bg-card)'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <div style={{
               width: '32px',
               height: '32px',
               borderRadius: '8px',
-              backgroundColor: 'rgba(239, 68, 68, 0.2)',
-              border: '1px solid rgba(239, 68, 68, 0.5)',
+              backgroundColor: 'var(--accent-red-dim)',
+              border: '1px solid var(--accent-red)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: '#f87171'
+              color: 'var(--accent-red)'
             }}>
               <CloudRain size={18} />
             </div>
@@ -82,7 +82,7 @@ export const StormSimulator = () => {
                 fontFamily: 'var(--font-display)',
                 fontSize: '16px',
                 fontWeight: 700,
-                color: '#ffffff',
+                color: 'var(--text-primary)',
                 letterSpacing: '0.04em'
               }}>
                 WEATHER DISRUPTION SIMULATOR
@@ -129,9 +129,9 @@ export const StormSimulator = () => {
                     style={{
                       padding: '10px 6px',
                       borderRadius: 'var(--radius-md)',
-                      backgroundColor: isSelected ? 'rgba(255, 255, 255, 0.12)' : 'rgba(255, 255, 255, 0.03)',
+                      backgroundColor: isSelected ? 'var(--accent-cyan-dim)' : 'var(--bg-inset)',
                       border: isSelected ? `2px solid ${opt.color}` : '1px solid var(--border-subtle)',
-                      boxShadow: isSelected ? `0 0 14px ${opt.color}44` : 'none',
+                      boxShadow: isSelected ? '0 1px 4px rgba(0, 0, 0, 0.08)' : 'none',
                       cursor: 'pointer',
                       display: 'flex',
                       flexDirection: 'column',
@@ -144,7 +144,7 @@ export const StormSimulator = () => {
                       fontFamily: 'var(--font-mono)',
                       fontSize: '11px',
                       fontWeight: 700,
-                      color: isSelected ? '#ffffff' : opt.color,
+                      color: isSelected ? 'var(--text-primary)' : opt.color,
                       textTransform: 'uppercase'
                     }}>
                       {opt.label}
@@ -161,14 +161,14 @@ export const StormSimulator = () => {
           {/* Scenario Details Preview Card */}
           <div style={{
             padding: '14px 16px',
-            backgroundColor: 'rgba(5, 12, 22, 0.75)',
+            backgroundColor: 'var(--bg-inset)',
             border: `1px solid ${scenario.strokeColor || 'var(--border-subtle)'}`,
             borderRadius: 'var(--radius-md)'
           }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <ShieldAlert size={16} color={scenario.strokeColor || '#00e5a3'} />
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12.5px', fontWeight: 700, color: '#ffffff' }}>
+                <ShieldAlert size={16} color={scenario.strokeColor || '#10b981'} />
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12.5px', fontWeight: 700, color: 'var(--text-primary)' }}>
                   {scenario.name}
                 </span>
               </div>
@@ -193,19 +193,19 @@ export const StormSimulator = () => {
               fontFamily: 'var(--font-mono)',
               fontSize: '11px'
             }}>
-              <div style={{ padding: '6px 8px', backgroundColor: 'rgba(255,255,255,0.03)', borderRadius: '4px' }}>
+              <div style={{ padding: '6px 8px', backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-subtle)', borderRadius: '4px' }}>
                 <div style={{ color: 'var(--text-muted)', fontSize: '9.5px' }}>WAVE HEIGHT</div>
-                <div style={{ color: '#ffffff', fontWeight: 600 }}>{scenario.waveHeightM} m</div>
+                <div style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{scenario.waveHeightM} m</div>
               </div>
-              <div style={{ padding: '6px 8px', backgroundColor: 'rgba(255,255,255,0.03)', borderRadius: '4px' }}>
+              <div style={{ padding: '6px 8px', backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-subtle)', borderRadius: '4px' }}>
                 <div style={{ color: 'var(--text-muted)', fontSize: '9.5px' }}>PEAK GUSTS</div>
-                <div style={{ color: '#ffffff', fontWeight: 600 }}>{scenario.windGustKn} kn</div>
+                <div style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{scenario.windGustKn} kn</div>
               </div>
-              <div style={{ padding: '6px 8px', backgroundColor: 'rgba(255,255,255,0.03)', borderRadius: '4px' }}>
+              <div style={{ padding: '6px 8px', backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-subtle)', borderRadius: '4px' }}>
                 <div style={{ color: 'var(--text-muted)', fontSize: '9.5px' }}>BAROMETER</div>
-                <div style={{ color: '#ffffff', fontWeight: 600 }}>{scenario.centralPressureHpa} hPa</div>
+                <div style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{scenario.centralPressureHpa} hPa</div>
               </div>
-              <div style={{ padding: '6px 8px', backgroundColor: 'rgba(255,255,255,0.03)', borderRadius: '4px' }}>
+              <div style={{ padding: '6px 8px', backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-subtle)', borderRadius: '4px' }}>
                 <div style={{ color: 'var(--text-muted)', fontSize: '9.5px' }}>RE-OPT REQ?</div>
                 <div style={{ color: scenario.rerouteRequired ? 'var(--accent-red)' : 'var(--accent-green)', fontWeight: 700 }}>
                   {scenario.rerouteRequired ? "YES (DETOUR)" : "NO (STABLE)"}
@@ -275,7 +275,7 @@ export const StormSimulator = () => {
           display: 'flex',
           justifyContent: 'flex-end',
           gap: '10px',
-          background: 'rgba(11, 20, 36, 0.9)'
+          background: 'var(--bg-card)'
         }}>
           <button
             type="button"

@@ -7,7 +7,7 @@ export const CIICard = () => {
   const { cii, ciiRating, ciiStatus, vessel } = plan;
 
   const grades = [
-    { grade: "A", range: "CII ≤ 5.8", label: "Superior", color: "#00e5a3" },
+    { grade: "A", range: "CII ≤ 5.8", label: "Superior", color: "#10b981" },
     { grade: "B", range: "5.8 < CII ≤ 7.5", label: "Compliant", color: "#38bdf8" },
     { grade: "C", range: "7.5 < CII ≤ 8.4", label: "Acceptable", color: "#fbbf24" },
     { grade: "D", range: "8.4 < CII ≤ 9.2", label: "Corrective Plan Req.", color: "#f97316" },
@@ -41,7 +41,7 @@ export const CIICard = () => {
           alignItems: 'center',
           gap: '16px',
           padding: '12px',
-          backgroundColor: 'rgba(5, 12, 22, 0.65)',
+          backgroundColor: 'var(--bg-inset)',
           borderRadius: 'var(--radius-md)',
           border: '1px solid var(--border-subtle)'
         }}>
@@ -49,16 +49,15 @@ export const CIICard = () => {
             width: '54px',
             height: '54px',
             borderRadius: '12px',
-            backgroundColor: ciiRating === 'A' ? 'rgba(0, 229, 163, 0.2)' : ciiRating === 'B' ? 'rgba(56, 189, 248, 0.2)' : 'rgba(245, 158, 11, 0.2)',
-            border: `2px solid ${ciiRating === 'A' ? '#00e5a3' : ciiRating === 'B' ? '#38bdf8' : '#f59e0b'}`,
+            backgroundColor: ciiRating === 'A' ? 'var(--accent-green-dim)' : ciiRating === 'B' ? 'var(--accent-cyan-dim)' : 'var(--accent-amber-dim)',
+            border: `2px solid ${ciiRating === 'A' ? 'var(--accent-green)' : ciiRating === 'B' ? 'var(--accent-cyan)' : 'var(--accent-amber)'}`,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             fontFamily: 'var(--font-display)',
             fontSize: '28px',
             fontWeight: 800,
-            color: '#ffffff',
-            boxShadow: `0 0 20px ${ciiRating === 'A' ? '#00e5a333' : '#38bdf833'}`
+            color: ciiRating === 'A' ? 'var(--accent-green)' : ciiRating === 'B' ? 'var(--accent-cyan)' : 'var(--accent-amber)'
           }}>
             {ciiRating}
           </div>
@@ -67,7 +66,7 @@ export const CIICard = () => {
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)' }}>
               PROJECTED VOYAGE CII
             </div>
-            <div style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 700, color: '#ffffff' }}>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 700, color: 'var(--text-primary)' }}>
               {cii} <span style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', color: 'var(--text-secondary)' }}>gCO₂ / (DWT•nm)</span>
             </div>
             <div style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>
@@ -101,25 +100,24 @@ export const CIICard = () => {
                   style={{
                     padding: '8px 4px',
                     borderRadius: 'var(--radius-sm)',
-                    backgroundColor: isActive ? `${g.color}28` : 'rgba(255, 255, 255, 0.03)',
+                    backgroundColor: isActive ? `${g.color}22` : 'var(--bg-inset)',
                     border: isActive ? `1.5px solid ${g.color}` : '1px solid var(--border-subtle)',
                     textAlign: 'center',
-                    boxShadow: isActive ? `0 0 12px ${g.color}55` : 'none',
-                    transition: 'all 0.2s ease'
+                    transition: 'all 0.15s ease'
                   }}
                 >
                   <div style={{
                     fontFamily: 'var(--font-display)',
                     fontSize: '14px',
                     fontWeight: 700,
-                    color: isActive ? '#ffffff' : g.color
+                    color: g.color
                   }}>
                     {g.grade}
                   </div>
                   <div style={{
                     fontSize: '8.5px',
                     fontFamily: 'var(--font-mono)',
-                    color: isActive ? '#ffffff' : 'var(--text-dim)',
+                    color: isActive ? 'var(--text-primary)' : 'var(--text-dim)',
                     marginTop: '2px'
                   }}>
                     {g.label}

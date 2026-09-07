@@ -4,7 +4,7 @@ export const STORM_SCENARIOS = {
     name: "Nominal MetOcean (No Disruption)",
     statusText: "NO DISRUPTION DETECTED",
     statusBadge: "Nominal Safe",
-    badgeColor: "#00e5a3",
+    badgeColor: "#10b981",
     description: "Atmospheric and oceanic conditions are well within standard operational envelope.",
     stormX: 0,
     stormY: 0,
@@ -108,7 +108,7 @@ export const STORM_SCENARIOS = {
     statusText: "CRITICAL WEATHER DISRUPTION",
     subText: "MAJOR EMERGENCY DETOUR • ALTERNATIVE VOYAGE PLAN SELECTED",
     statusBadge: "Emergency Protocol",
-    badgeColor: "#d946ef",
+    badgeColor: "#a855f7",
     description: "Violent category-5 equivalent super cyclone with hurricane-force gusts and mountainous 7.8m waves. Extreme diversion.",
     stormX: 575,
     stormY: 370,
@@ -124,9 +124,9 @@ export const STORM_SCENARIOS = {
     costImpactPct: 11.8,
     co2ImpactPct: 10.4,
     speedDeltaKn: -2.4,
-    color: "#d946ef",
-    fillColor: "rgba(217, 70, 239, 0.36)",
-    strokeColor: "#d946ef",
+    color: "#a855f7",
+    fillColor: "rgba(168, 85, 247, 0.28)",
+    strokeColor: "#a855f7",
     operationalAdvisory: "Complete tactical reroute into sub-equatorial shipping corridor. Speed throttled to 13.8 kn to protect cargo integrity."
   }
 };

@@ -42,15 +42,15 @@ export const ReoptimizationModal = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          background: 'rgba(11, 20, 36, 0.9)'
+          background: 'var(--bg-card)'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <div style={{
               width: '32px',
               height: '32px',
               borderRadius: '8px',
-              backgroundColor: 'rgba(0, 240, 255, 0.18)',
-              border: '1px solid var(--accent-cyan)',
+              backgroundColor: 'var(--accent-cyan-dim)',
+              border: '1px solid var(--border-bright)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -63,7 +63,7 @@ export const ReoptimizationModal = () => {
                 fontFamily: 'var(--font-display)',
                 fontSize: '15px',
                 fontWeight: 700,
-                color: '#ffffff',
+                color: 'var(--text-primary)',
                 letterSpacing: '0.04em'
               }}>
                 DYNAMIC RE-OPTIMIZATION ENGINE
@@ -106,8 +106,8 @@ export const ReoptimizationModal = () => {
                       justifyContent: 'space-between',
                       padding: '8px 12px',
                       borderRadius: 'var(--radius-md)',
-                      backgroundColor: isCurrent ? 'rgba(0, 240, 255, 0.08)' : isCompleted ? 'rgba(0, 229, 163, 0.06)' : 'rgba(255, 255, 255, 0.02)',
-                      border: isCurrent ? '1px solid var(--border-bright)' : isCompleted ? '1px solid rgba(0, 229, 163, 0.3)' : '1px solid var(--border-subtle)',
+                      backgroundColor: isCurrent ? 'var(--accent-cyan-dim)' : isCompleted ? 'var(--accent-green-dim)' : 'var(--bg-inset)',
+                      border: isCurrent ? '1px solid var(--border-bright)' : isCompleted ? '1px solid var(--accent-green)' : '1px solid var(--border-subtle)',
                       transition: 'all 0.2s ease'
                     }}
                   >
@@ -122,7 +122,7 @@ export const ReoptimizationModal = () => {
                       <span style={{
                         fontFamily: 'var(--font-mono)',
                         fontSize: '11.5px',
-                        color: isCompleted ? '#ffffff' : isCurrent ? 'var(--accent-cyan)' : 'var(--text-dim)'
+                        color: isCompleted ? 'var(--text-primary)' : isCurrent ? 'var(--accent-cyan)' : 'var(--text-dim)'
                       }}>
                         {text}
                       </span>
@@ -147,27 +147,27 @@ export const ReoptimizationModal = () => {
                 alignItems: 'center',
                 gap: '8px',
                 padding: '8px 12px',
-                backgroundColor: 'rgba(0, 229, 163, 0.12)',
-                border: '1px solid rgba(0, 229, 163, 0.3)',
+                backgroundColor: 'var(--accent-green-dim)',
+                border: '1px solid var(--accent-green)',
                 borderRadius: 'var(--radius-md)',
                 marginBottom: '16px'
               }}>
                 <ShieldCheck size={16} color="var(--accent-green)" />
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11.5px', color: '#ffffff' }}>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11.5px', color: 'var(--text-primary)' }}>
                   <strong>OPTIMAL DETOUR GENERATED:</strong> Severe wave region safely bypassed with minimum fuel penalty.
                 </span>
               </div>
 
               {/* Comparison Table */}
               <div style={{
-                backgroundColor: 'rgba(5, 12, 22, 0.8)',
+                backgroundColor: 'var(--bg-inset)',
                 border: '1px solid var(--border-subtle)',
                 borderRadius: 'var(--radius-md)',
                 overflow: 'hidden'
               }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-mono)', fontSize: '11.5px' }}>
                   <thead>
-                    <tr style={{ backgroundColor: 'rgba(255, 255, 255, 0.04)', borderBottom: '1px solid var(--border-subtle)', color: 'var(--text-muted)' }}>
+                    <tr style={{ backgroundColor: 'var(--bg-card)', borderBottom: '1px solid var(--border-subtle)', color: 'var(--text-muted)' }}>
                       <th style={{ padding: '10px 14px', textAlign: 'left' }}>METRIC</th>
                       <th style={{ padding: '10px 14px', textAlign: 'right' }}>ORIGINAL PLAN</th>
                       <th style={{ padding: '10px 14px', textAlign: 'center' }}></th>
@@ -177,35 +177,35 @@ export const ReoptimizationModal = () => {
                   </thead>
                   <tbody>
                     <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
-                      <td style={{ padding: '9px 14px', color: '#ffffff' }}>Fuel Consumption</td>
+                      <td style={{ padding: '9px 14px', color: 'var(--text-primary)' }}>Fuel Consumption</td>
                       <td style={{ padding: '9px 14px', textAlign: 'right' }}>{original.fuelConsumption} t</td>
                       <td style={{ padding: '9px 14px', textAlign: 'center', color: 'var(--text-dim)' }}><ArrowRight size={12} /></td>
                       <td style={{ padding: '9px 14px', textAlign: 'right', color: 'var(--accent-cyan)', fontWeight: 600 }}>{reopt.fuelConsumption} t</td>
                       <td style={{ padding: '9px 14px', textAlign: 'right', color: 'var(--accent-amber)' }}>+{reopt.fuelConsumption - original.fuelConsumption} t (+{reopt.storm.fuelImpactPct}%)</td>
                     </tr>
                     <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
-                      <td style={{ padding: '9px 14px', color: '#ffffff' }}>Total Cost</td>
+                      <td style={{ padding: '9px 14px', color: 'var(--text-primary)' }}>Total Cost</td>
                       <td style={{ padding: '9px 14px', textAlign: 'right' }}>₹{original.totalCost.toLocaleString()}</td>
                       <td style={{ padding: '9px 14px', textAlign: 'center', color: 'var(--text-dim)' }}><ArrowRight size={12} /></td>
                       <td style={{ padding: '9px 14px', textAlign: 'right', color: 'var(--accent-cyan)', fontWeight: 600 }}>₹{reopt.totalCost.toLocaleString()}</td>
                       <td style={{ padding: '9px 14px', textAlign: 'right', color: 'var(--accent-amber)' }}>+₹{(reopt.totalCost - original.totalCost).toLocaleString()}</td>
                     </tr>
                     <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
-                      <td style={{ padding: '9px 14px', color: '#ffffff' }}>CO₂ Emissions</td>
+                      <td style={{ padding: '9px 14px', color: 'var(--text-primary)' }}>CO₂ Emissions</td>
                       <td style={{ padding: '9px 14px', textAlign: 'right' }}>{original.co2} t</td>
                       <td style={{ padding: '9px 14px', textAlign: 'center', color: 'var(--text-dim)' }}><ArrowRight size={12} /></td>
                       <td style={{ padding: '9px 14px', textAlign: 'right', color: 'var(--accent-cyan)', fontWeight: 600 }}>{reopt.co2} t</td>
                       <td style={{ padding: '9px 14px', textAlign: 'right', color: 'var(--accent-amber)' }}>+{reopt.co2 - original.co2} t</td>
                     </tr>
                     <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
-                      <td style={{ padding: '9px 14px', color: '#ffffff' }}>Operating Speed</td>
+                      <td style={{ padding: '9px 14px', color: 'var(--text-primary)' }}>Operating Speed</td>
                       <td style={{ padding: '9px 14px', textAlign: 'right' }}>{original.speed} kn</td>
                       <td style={{ padding: '9px 14px', textAlign: 'center', color: 'var(--text-dim)' }}><ArrowRight size={12} /></td>
                       <td style={{ padding: '9px 14px', textAlign: 'right', color: 'var(--accent-cyan)', fontWeight: 600 }}>{reopt.speed} kn</td>
                       <td style={{ padding: '9px 14px', textAlign: 'right', color: 'var(--text-secondary)' }}>{reopt.speed - original.speed} kn</td>
                     </tr>
                     <tr>
-                      <td style={{ padding: '9px 14px', color: '#ffffff' }}>CII Rating</td>
+                      <td style={{ padding: '9px 14px', color: 'var(--text-primary)' }}>CII Rating</td>
                       <td style={{ padding: '9px 14px', textAlign: 'right' }}>{original.cii} (Rating {original.ciiRating})</td>
                       <td style={{ padding: '9px 14px', textAlign: 'center', color: 'var(--text-dim)' }}><ArrowRight size={12} /></td>
                       <td style={{ padding: '9px 14px', textAlign: 'right', color: 'var(--accent-green)', fontWeight: 600 }}>{reopt.cii} (Rating {reopt.ciiRating})</td>
@@ -225,7 +225,7 @@ export const ReoptimizationModal = () => {
           display: 'flex',
           justifyContent: 'flex-end',
           gap: '10px',
-          background: 'rgba(11, 20, 36, 0.9)'
+          background: 'var(--bg-card)'
         }}>
           <button
             onClick={() => setIsReoptModalOpen(false)}

@@ -13,7 +13,7 @@ export const WeatherPage = () => {
       {/* Page Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px' }}>
         <div>
-          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 700, color: '#ffffff' }}>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)' }}>
             Metocean Telemetry & Oceanographic Risk
           </h2>
           <p style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>
@@ -61,10 +61,9 @@ export const WeatherPage = () => {
                 key={snap.id}
                 style={{
                   padding: '10px',
-                  borderRadius: 'var(--radius-md)',
-                  backgroundColor: isCurrent ? 'rgba(0, 240, 255, 0.12)' : 'rgba(5, 12, 22, 0.65)',
-                  border: isCurrent ? '1.5px solid var(--accent-cyan)' : '1px solid var(--border-subtle)',
-                  boxShadow: isCurrent ? '0 0 14px rgba(0, 240, 255, 0.3)' : 'none',
+                  borderRadius: 'var(--radius-sm)',
+                  backgroundColor: isCurrent ? 'var(--accent-cyan-dim)' : 'var(--bg-inset)',
+                  border: isCurrent ? '1px solid var(--border-bright)' : '1px solid var(--border-subtle)',
                   display: 'flex',
                   flexDirection: 'column',
                   gap: '4px'
@@ -83,7 +82,7 @@ export const WeatherPage = () => {
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', fontFamily: 'var(--font-mono)' }}>
                   <span style={{ color: 'var(--text-muted)' }}>Wind:</span>
-                  <span style={{ color: '#ffffff' }}>{snap.windSpeedKn} kn {snap.windDirection}</span>
+                  <span style={{ color: 'var(--text-primary)' }}>{snap.windSpeedKn} kn {snap.windDirection}</span>
                 </div>
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', fontFamily: 'var(--font-mono)' }}>
@@ -95,12 +94,12 @@ export const WeatherPage = () => {
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', fontFamily: 'var(--font-mono)' }}>
                   <span style={{ color: 'var(--text-muted)' }}>Current:</span>
-                  <span style={{ color: '#ffffff' }}>{snap.currentKn} kn {snap.currentDirection}</span>
+                  <span style={{ color: 'var(--text-primary)' }}>{snap.currentKn} kn {snap.currentDirection}</span>
                 </div>
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', fontFamily: 'var(--font-mono)' }}>
                   <span style={{ color: 'var(--text-muted)' }}>Sea State:</span>
-                  <span style={{ color: snap.seaStateCode >= 5 ? '#f97316' : '#38bdf8' }}>{snap.seaState}</span>
+                  <span style={{ color: snap.seaStateCode >= 5 ? 'var(--accent-amber)' : 'var(--accent-cyan)' }}>{snap.seaState}</span>
                 </div>
 
                 <div style={{

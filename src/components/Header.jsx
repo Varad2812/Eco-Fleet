@@ -8,7 +8,9 @@ import {
   RotateCcw, 
   Zap, 
   AlertTriangle,
-  Radio
+  Radio,
+  Sun,
+  Moon
 } from 'lucide-react';
 
 export const Header = () => {
@@ -20,7 +22,9 @@ export const Header = () => {
     demoStep, 
     nextDemoStep, 
     weatherCountdown,
-    snapshotIndex 
+    snapshotIndex,
+    theme,
+    toggleTheme
   } = useFleet();
 
   const [utcTime, setUtcTime] = useState('');
@@ -59,7 +63,7 @@ export const Header = () => {
             fontSize: '15px',
             fontWeight: 700,
             letterSpacing: '0.04em',
-            color: '#ffffff',
+            color: 'var(--text-primary)',
             display: 'flex',
             alignItems: 'center',
             gap: '10px'
@@ -101,14 +105,14 @@ export const Header = () => {
       </div>
 
       {/* Action Controls & Clock */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
         {/* UTC Clock */}
         <div style={{
           display: 'flex',
           alignItems: 'center',
           gap: '6px',
           padding: '5px 10px',
-          backgroundColor: 'rgba(0, 0, 0, 0.4)',
+          backgroundColor: 'var(--bg-inset)',
           borderRadius: 'var(--radius-sm)',
           border: '1px solid var(--border-subtle)',
           fontFamily: 'var(--font-mono)',
@@ -118,6 +122,26 @@ export const Header = () => {
           <Clock size={12} />
           <span>{utcTime || "SYNCING UTC..."}</span>
         </div>
+
+        {/* Theme Switcher Button */}
+        <button
+          onClick={toggleTheme}
+          className="btn btn-secondary"
+          title={theme === 'light' ? "Switch to Tactical Night Watch Dark Mode" : "Switch to Executive Light Mode"}
+          style={{ padding: '6px 11px', fontSize: '11px', gap: '6px' }}
+        >
+          {theme === 'light' ? (
+            <>
+              <Moon size={12} color="var(--accent-cyan)" />
+              <span>DARK</span>
+            </>
+          ) : (
+            <>
+              <Sun size={12} color="var(--accent-amber)" />
+              <span>LIGHT</span>
+            </>
+          )}
+        </button>
 
         {/* Reset Simulation button */}
         <button
@@ -165,12 +189,12 @@ export const Header = () => {
             width: '28px',
             height: '28px',
             borderRadius: '50%',
-            backgroundColor: '#172554',
-            border: '1px solid var(--accent-cyan)',
+            backgroundColor: 'var(--bg-inset)',
+            border: '1px solid var(--border-medium)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: 'var(--accent-cyan)'
+            color: 'var(--text-secondary)'
           }}>
             <UserCheck size={14} />
           </div>

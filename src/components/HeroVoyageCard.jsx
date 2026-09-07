@@ -26,23 +26,12 @@ export const HeroVoyageCard = () => {
   const isStormActive = stormState.intensity !== 'none';
 
   return (
-    <div className="q-card glow-cyan" style={{
-      background: 'linear-gradient(135deg, rgba(13, 24, 46, 0.85) 0%, rgba(8, 14, 26, 0.9) 100%)',
+    <div className="q-card" style={{
+      background: 'var(--bg-card)',
+      border: '1px solid var(--border-medium)',
       padding: '16px 20px',
-      position: 'relative',
-      overflow: 'hidden'
+      position: 'relative'
     }}>
-      {/* Background ambient lighting */}
-      <div style={{
-        position: 'absolute',
-        top: '-40px',
-        right: '-40px',
-        width: '180px',
-        height: '180px',
-        borderRadius: '50%',
-        background: isStormActive ? 'radial-gradient(circle, rgba(239, 68, 68, 0.15) 0%, transparent 70%)' : 'radial-gradient(circle, rgba(0, 240, 255, 0.12) 0%, transparent 70%)',
-        pointerEvents: 'none'
-      }} />
 
       <div style={{
         display: 'flex',
@@ -63,7 +52,7 @@ export const HeroVoyageCard = () => {
               fontFamily: 'var(--font-mono)',
               fontSize: '11px',
               fontWeight: 700,
-              letterSpacing: '0.08em',
+              letterSpacing: '0.06em',
               color: 'var(--accent-cyan)',
               textTransform: 'uppercase'
             }}>
@@ -88,17 +77,17 @@ export const HeroVoyageCard = () => {
             display: 'flex',
             alignItems: 'center',
             gap: '12px',
-            fontFamily: 'var(--font-display)',
-            fontSize: '22px',
+            fontFamily: 'var(--font-sans)',
+            fontSize: '20px',
             fontWeight: 700,
-            color: '#ffffff',
-            letterSpacing: '0.02em'
+            color: 'var(--text-primary)',
+            letterSpacing: '0.01em'
           }}>
             <span>{vessel.name}</span>
             <span style={{ color: 'var(--text-muted)' }}>•</span>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--accent-cyan)' }}>
               <span>{sourcePort.name}</span>
-              <ArrowRight size={18} color="var(--accent-cyan)" />
+              <ArrowRight size={16} color="var(--accent-cyan)" />
               <span>{destPort.name}</span>
             </div>
           </div>
@@ -115,22 +104,22 @@ export const HeroVoyageCard = () => {
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
               <Gauge size={13} color="var(--accent-cyan)" />
-              <span>Speed: <strong style={{ color: '#ffffff' }}>{speed} kn</strong></span>
+              <span>Speed: <strong style={{ color: 'var(--text-primary)' }}>{speed} kn</strong></span>
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
               <Clock size={13} color="var(--accent-green)" />
-              <span>ETA: <strong style={{ color: '#ffffff' }}>{etaDate}</strong></span>
+              <span>ETA: <strong style={{ color: 'var(--text-primary)' }}>{etaDate}</strong></span>
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
               <Fuel size={13} color="var(--accent-marine)" />
-              <span>Bunker: <strong style={{ color: '#ffffff' }}>{fuel.name}</strong></span>
+              <span>Bunker: <strong style={{ color: 'var(--text-primary)' }}>{fuel.name}</strong></span>
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
               <SlidersHorizontal size={13} color="var(--accent-amber)" />
-              <span>Profile: <strong style={{ color: '#ffffff' }}>{service.name}</strong></span>
+              <span>Profile: <strong style={{ color: 'var(--text-primary)' }}>{service.name}</strong></span>
             </div>
           </div>
         </div>

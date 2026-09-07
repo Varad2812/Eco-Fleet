@@ -1,0 +1,29 @@
+# ==============================================================================
+# ECO-FLEET MARITIME DECISION SUPPORT SYSTEM (DSS)
+# High-Performance Quantum-Inspired Voyage & Decarbonization Solver Stack
+# ==============================================================================
+
+# Core API & ASGI Web Service
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+pydantic>=2.6.0
+pydantic-settings>=2.2.0
+
+# Scientific, Numerical & Optimization Libraries
+numpy>=1.26.0
+scipy>=1.12.0
+pandas>=2.2.0
+
+# Oceanic & Hydrodynamic Modeling Tools
+netCDF4>=1.6.5
+xarray>=2024.02.0
+metpy>=1.6.1
+
+# Quantum Surrogate & Deep Learning (QINN)
+torch>=2.2.0
+scikit-learn>=1.4.0
+
+# Networking & MetOcean Telemetry Ingestion
+httpx>=0.27.0
+websockets>=12.0
+python-dotenv>=1.0.1

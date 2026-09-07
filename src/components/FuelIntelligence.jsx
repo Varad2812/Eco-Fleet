@@ -32,25 +32,25 @@ export const FuelIntelligence = () => {
               onClick={() => updateConfig({ fuelId: fuel.id })}
               style={{
                 padding: '14px 14px',
-                backgroundColor: isSelected ? 'rgba(0, 240, 255, 0.08)' : 'rgba(5, 12, 22, 0.65)',
-                border: isSelected ? '1.5px solid var(--accent-cyan)' : '1px solid var(--border-subtle)',
-                borderRadius: 'var(--radius-lg)',
+                backgroundColor: isSelected ? 'var(--accent-cyan-dim)' : 'var(--bg-inset)',
+                border: isSelected ? '1px solid var(--border-bright)' : '1px solid var(--border-subtle)',
+                borderRadius: 'var(--radius-md)',
                 cursor: 'pointer',
-                transition: 'all 0.18s ease',
+                transition: 'all 0.15s ease',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                boxShadow: isSelected ? '0 0 16px rgba(0, 240, 255, 0.25)' : 'none'
+                boxShadow: isSelected ? 'var(--shadow-card)' : 'none'
               }}
             >
               <div>
                 {/* Header */}
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                   <span style={{
-                    fontFamily: 'var(--font-display)',
-                    fontSize: '14px',
+                    fontFamily: 'var(--font-sans)',
+                    fontSize: '13.5px',
                     fontWeight: 700,
-                    color: isSelected ? 'var(--accent-cyan)' : '#ffffff'
+                    color: isSelected ? 'var(--accent-cyan)' : 'var(--text-primary)'
                   }}>
                     {fuel.shortName}
                   </span>
@@ -73,13 +73,14 @@ export const FuelIntelligence = () => {
                 {/* Price & WtW */}
                 <div style={{
                   padding: '6px 8px',
-                  backgroundColor: 'rgba(255, 255, 255, 0.03)',
+                  backgroundColor: 'var(--bg-card)',
                   borderRadius: 'var(--radius-sm)',
+                  border: '1px solid var(--border-subtle)',
                   marginBottom: '10px'
                 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', fontFamily: 'var(--font-mono)' }}>
                     <span style={{ color: 'var(--text-muted)' }}>Index Price:</span>
-                    <span style={{ color: '#ffffff', fontWeight: 600 }}>₹{fuel.pricePerTonne.toLocaleString()}/t</span>
+                    <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>₹{fuel.pricePerTonne.toLocaleString()}/t</span>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', fontFamily: 'var(--font-mono)', marginTop: '3px' }}>
                     <span style={{ color: 'var(--text-muted)' }}>WtW CO₂e:</span>

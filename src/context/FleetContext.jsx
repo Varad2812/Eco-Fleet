@@ -10,6 +10,26 @@ import { SERVICE_PROFILES } from '../data/services';
 const FleetContext = createContext(null);
 
 export const FleetProvider = ({ children }) => {
+  // 0. Enterprise Theme State (Executive Light by default, Institutional Dark switchable)
+  const [theme, setTheme] = useState(() => {
+    try {
+      return localStorage.getItem('ecofleet_theme') || 'light';
+    } catch {
+      return 'light';
+    }
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    try {
+      localStorage.setItem('ecofleet_theme', theme);
+    } catch {}
+  }, [theme]);
+
+  const toggleTheme = useCallback(() => {
+    setTheme(t => (t === 'light' ? 'dark' : 'light'));
+  }, []);
+
   // 1. Voyage Configuration State
   const [config, setConfig] = useState({
     vesselId: "ocean-pioneer",
@@ -477,7 +497,10 @@ export const FleetProvider = ({ children }) => {
         startDemo,
         stopDemo,
         nextDemoStep,
-        toast
+        toast,
+        theme,
+        setTheme,
+        toggleTheme
       }}
     >
       {children}

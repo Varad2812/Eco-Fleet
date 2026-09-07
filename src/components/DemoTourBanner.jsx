@@ -56,9 +56,9 @@ export const DemoTourBanner = () => {
 
   return (
     <div style={{
-      backgroundColor: 'rgba(11, 22, 42, 0.95)',
-      borderBottom: '1px solid var(--accent-cyan)',
-      boxShadow: '0 4px 25px rgba(0, 240, 255, 0.25)',
+      backgroundColor: 'var(--bg-secondary)',
+      borderBottom: '1px solid var(--border-subtle)',
+      boxShadow: 'var(--shadow-dropdown)',
       padding: '10px 20px',
       display: 'flex',
       alignItems: 'center',
@@ -74,8 +74,8 @@ export const DemoTourBanner = () => {
           alignItems: 'center',
           gap: '6px',
           padding: '4px 8px',
-          backgroundColor: 'rgba(0, 240, 255, 0.15)',
-          border: '1px solid var(--accent-cyan)',
+          backgroundColor: 'var(--accent-cyan-dim)',
+          border: '1px solid var(--border-bright)',
           borderRadius: 'var(--radius-sm)',
           fontFamily: 'var(--font-mono)',
           fontSize: '11px',
@@ -92,13 +92,13 @@ export const DemoTourBanner = () => {
             fontFamily: 'var(--font-display)',
             fontSize: '13px',
             fontWeight: 700,
-            color: '#ffffff'
+            color: 'var(--text-primary)'
           }}>
             {current.title}
           </div>
           <div style={{
             fontSize: '11.5px',
-            color: '#cbd5e1',
+            color: 'var(--text-secondary)',
             fontStyle: 'italic'
           }}>
             {current.script}

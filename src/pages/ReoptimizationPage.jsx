@@ -43,7 +43,7 @@ export const ReoptimizationPage = () => {
               CASUALTY & WEATHER RESPONSE ROOM
             </span>
           </div>
-          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 700, color: '#ffffff', marginTop: '4px' }}>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)', marginTop: '4px' }}>
             Dynamic Re-Optimization & Incident Recovery
           </h2>
         </div>
@@ -70,7 +70,7 @@ export const ReoptimizationPage = () => {
       {/* Disruption Incident Alert Banner */}
       <div style={{
         padding: '16px',
-        backgroundColor: isStormActive ? 'rgba(239, 68, 68, 0.12)' : 'rgba(0, 229, 163, 0.08)',
+        backgroundColor: isStormActive ? 'var(--accent-red-dim)' : 'var(--accent-green-dim)',
         border: `1.5px solid ${isStormActive ? 'var(--accent-red)' : 'var(--accent-green)'}`,
         borderRadius: 'var(--radius-lg)',
         display: 'flex',
@@ -83,11 +83,11 @@ export const ReoptimizationPage = () => {
             width: '40px',
             height: '40px',
             borderRadius: '10px',
-            backgroundColor: isStormActive ? 'rgba(239, 68, 68, 0.25)' : 'rgba(0, 229, 163, 0.2)',
+            backgroundColor: isStormActive ? 'var(--accent-red-dim)' : 'var(--accent-green-dim)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: isStormActive ? '#ef4444' : '#00e5a3'
+            color: isStormActive ? 'var(--accent-red)' : 'var(--accent-green)'
           }}>
             {isStormActive ? <ShieldAlert size={22} /> : <ShieldCheck size={22} />}
           </div>
@@ -96,7 +96,7 @@ export const ReoptimizationPage = () => {
               fontFamily: 'var(--font-display)',
               fontSize: '15px',
               fontWeight: 700,
-              color: '#ffffff'
+              color: 'var(--text-primary)'
             }}>
               {isStormActive ? `WEATHER EVENT: ${storm.name}` : "NOMINAL METOCEAN CONDITIONS"}
             </div>
@@ -140,12 +140,12 @@ export const ReoptimizationPage = () => {
           gap: '12px'
         }}>
           {/* Fuel Variance Card */}
-          <div style={{ padding: '12px', backgroundColor: 'rgba(5, 12, 22, 0.7)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)' }}>
+          <div style={{ padding: '12px', backgroundColor: 'var(--bg-inset)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--accent-marine)', fontSize: '11px', fontFamily: 'var(--font-mono)' }}>
               <Fuel size={13} />
               <span>FUEL CONSUMPTION</span>
             </div>
-            <div style={{ fontSize: '20px', fontFamily: 'var(--font-display)', fontWeight: 700, color: '#ffffff', marginTop: '6px' }}>
+            <div style={{ fontSize: '20px', fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--text-primary)', marginTop: '6px' }}>
               {reopt.fuelConsumption} t
             </div>
             <div style={{ fontSize: '10.5px', fontFamily: 'var(--font-mono)', color: 'var(--accent-amber)', marginTop: '2px' }}>
@@ -154,12 +154,12 @@ export const ReoptimizationPage = () => {
           </div>
 
           {/* Cost Variance Card */}
-          <div style={{ padding: '12px', backgroundColor: 'rgba(5, 12, 22, 0.7)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)' }}>
+          <div style={{ padding: '12px', backgroundColor: 'var(--bg-inset)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--accent-cyan)', fontSize: '11px', fontFamily: 'var(--font-mono)' }}>
               <DollarSign size={13} />
               <span>TOTAL VOYAGE COST</span>
             </div>
-            <div style={{ fontSize: '20px', fontFamily: 'var(--font-display)', fontWeight: 700, color: '#ffffff', marginTop: '6px' }}>
+            <div style={{ fontSize: '20px', fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--text-primary)', marginTop: '6px' }}>
               ₹{reopt.totalCost.toLocaleString()}
             </div>
             <div style={{ fontSize: '10.5px', fontFamily: 'var(--font-mono)', color: 'var(--accent-amber)', marginTop: '2px' }}>
@@ -168,12 +168,12 @@ export const ReoptimizationPage = () => {
           </div>
 
           {/* Schedule Impact Card */}
-          <div style={{ padding: '12px', backgroundColor: 'rgba(5, 12, 22, 0.7)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)' }}>
+          <div style={{ padding: '12px', backgroundColor: 'var(--bg-inset)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--accent-green)', fontSize: '11px', fontFamily: 'var(--font-mono)' }}>
               <Clock size={13} />
               <span>SCHEDULE VARIANCE</span>
             </div>
-            <div style={{ fontSize: '20px', fontFamily: 'var(--font-display)', fontWeight: 700, color: '#ffffff', marginTop: '6px' }}>
+            <div style={{ fontSize: '20px', fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--text-primary)', marginTop: '6px' }}>
               +{Math.round(reopt.storm.etaDelayHours * 60)} min
             </div>
             <div style={{ fontSize: '10.5px', fontFamily: 'var(--font-mono)', color: 'var(--text-secondary)', marginTop: '2px' }}>
@@ -182,8 +182,8 @@ export const ReoptimizationPage = () => {
           </div>
 
           {/* CII Rating Protection Card */}
-          <div style={{ padding: '12px', backgroundColor: 'rgba(5, 12, 22, 0.7)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#38bdf8', fontSize: '11px', fontFamily: 'var(--font-mono)' }}>
+          <div style={{ padding: '12px', backgroundColor: 'var(--bg-inset)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--accent-cyan)', fontSize: '11px', fontFamily: 'var(--font-mono)' }}>
               <Award size={13} />
               <span>IMO CII RATING</span>
             </div>
@@ -200,15 +200,16 @@ export const ReoptimizationPage = () => {
         <div style={{
           marginTop: '14px',
           padding: '12px 14px',
-          backgroundColor: 'rgba(5, 12, 22, 0.85)',
+          backgroundColor: 'var(--bg-inset)',
           borderRadius: 'var(--radius-md)',
           borderLeft: '3px solid var(--accent-cyan)',
+          border: '1px solid var(--border-subtle)',
           fontFamily: 'var(--font-mono)',
           fontSize: '11.5px',
           lineHeight: 1.5,
           color: 'var(--text-secondary)'
         }}>
-          <strong style={{ color: '#ffffff' }}>INCIDENT COMMAND SUMMARY:</strong> {isStormActive 
+          <strong style={{ color: 'var(--text-primary)' }}>INCIDENT COMMAND SUMMARY:</strong> {isStormActive 
             ? `QEA autonomous re-optimization evaluated 1,420 alternate nautical nodes south of the storm front. Southern deep-water corridor diverts the vessel into 2.2m following seas, completely avoiding 6.4m wave crests and slamming pressures. Vessel safety, cargo integrity, and IMO CII compliance Rating ${reopt.ciiRating} are guaranteed.`
             : "No active meteorological disruptions registered on planned track. Vessel maintaining prime quantum-evaluated heading."}
         </div>

@@ -26,7 +26,6 @@ export const KPICards = () => {
       isPositive: true,
       icon: DollarSign,
       color: "var(--accent-cyan)",
-      borderGlow: "rgba(0, 240, 255, 0.2)",
       subtext: `Bunker: ₹${plan.fuelCost.toLocaleString()} • Carbon: ₹${plan.carbonCost.toLocaleString()}`
     },
     {
@@ -38,7 +37,6 @@ export const KPICards = () => {
       isPositive: true,
       icon: Fuel,
       color: "var(--accent-marine)",
-      borderGlow: "rgba(56, 189, 248, 0.2)",
       subtext: `${plan.fuel.shortName} • Energy: ${plan.fuel.energyDensity} MJ/kg`
     },
     {
@@ -50,7 +48,6 @@ export const KPICards = () => {
       isPositive: true,
       icon: Cloud,
       color: "var(--accent-green)",
-      borderGlow: "rgba(0, 229, 163, 0.2)",
       subtext: `WtW Intensity: ${plan.fuel.wtwEmissions} t/t fuel`
     },
     {
@@ -61,8 +58,7 @@ export const KPICards = () => {
       comparison: `IMO 2026 Compliant`,
       isPositive: plan.ciiRating === "A" || plan.ciiRating === "B",
       icon: Award,
-      color: plan.ciiRating === "A" ? "#00e5a3" : plan.ciiRating === "B" ? "#38bdf8" : "#f59e0b",
-      borderGlow: plan.ciiRating === "A" ? "rgba(0, 229, 163, 0.2)" : "rgba(245, 158, 11, 0.2)",
+      color: plan.ciiRating === "A" ? "#10b981" : plan.ciiRating === "B" ? "#0284c7" : "#d97706",
       subtext: `Status: ${plan.ciiStatus}`
     },
     {
@@ -74,7 +70,6 @@ export const KPICards = () => {
       isPositive: !isStormActive,
       icon: Clock,
       color: isStormActive ? "var(--accent-amber)" : "var(--accent-green)",
-      borderGlow: "rgba(0, 229, 163, 0.2)",
       subtext: `Transit: ${Math.round(plan.etaDurationHours)} hrs @ ${plan.speed} kn`
     },
     {
@@ -86,7 +81,6 @@ export const KPICards = () => {
       isPositive: true,
       icon: Navigation,
       color: "var(--text-secondary)",
-      borderGlow: "rgba(255, 255, 255, 0.08)",
       subtext: `${plan.sourcePort.name} → ${plan.destPort.name}`
     }
   ];
@@ -138,7 +132,7 @@ export const KPICards = () => {
                   fontFamily: 'var(--font-display)',
                   fontSize: '22px',
                   fontWeight: 700,
-                  color: '#ffffff',
+                  color: 'var(--text-primary)',
                   lineHeight: 1.1
                 }}>
                   {card.value}

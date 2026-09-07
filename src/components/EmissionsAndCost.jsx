@@ -17,9 +17,9 @@ export const EmissionsAndCost = () => {
   } = plan;
 
   const costBreakdown = [
-    { label: "Bunker Fuel", amount: fuelCost, pct: Math.round((fuelCost / totalCost) * 100), color: "#00f0ff" },
-    { label: "Carbon ETS / Levy", amount: carbonCost, pct: Math.round((carbonCost / totalCost) * 100), color: "#00e5a3" },
-    { label: "Port & Canal Dues", amount: portCost, pct: Math.round((portCost / totalCost) * 100), color: "#38bdf8" },
+    { label: "Bunker Fuel", amount: fuelCost, pct: Math.round((fuelCost / totalCost) * 100), color: "#38bdf8" },
+    { label: "Carbon ETS / Levy", amount: carbonCost, pct: Math.round((carbonCost / totalCost) * 100), color: "#10b981" },
+    { label: "Port & Canal Dues", amount: portCost, pct: Math.round((portCost / totalCost) * 100), color: "#0ea5e9" },
     { label: "Demurrage Risk Reserve", amount: demurrageRiskCost, pct: Math.round((demurrageRiskCost / totalCost) * 100), color: "#f59e0b" }
   ];
 
@@ -49,7 +49,7 @@ export const EmissionsAndCost = () => {
           overflow: 'hidden',
           display: 'flex',
           marginBottom: '14px',
-          backgroundColor: 'rgba(255, 255, 255, 0.05)'
+          backgroundColor: 'var(--border-subtle)'
         }}>
           {costBreakdown.map((item, idx) => (
             <div
@@ -77,7 +77,7 @@ export const EmissionsAndCost = () => {
                 fontSize: '11.5px',
                 fontFamily: 'var(--font-mono)',
                 padding: '4px 0',
-                borderBottom: idx < costBreakdown.length - 1 ? '1px solid rgba(255, 255, 255, 0.04)' : 'none'
+                borderBottom: idx < costBreakdown.length - 1 ? '1px solid var(--border-subtle)' : 'none'
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -85,7 +85,7 @@ export const EmissionsAndCost = () => {
                 <span style={{ color: 'var(--text-secondary)' }}>{item.label}</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <span style={{ color: '#ffffff', fontWeight: 600 }}>₹{item.amount.toLocaleString()}</span>
+                <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>₹{item.amount.toLocaleString()}</span>
                 <span style={{ color: 'var(--text-dim)', fontSize: '10px' }}>({item.pct}%)</span>
               </div>
             </div>
@@ -113,7 +113,7 @@ export const EmissionsAndCost = () => {
               <span style={{ color: 'var(--text-muted)' }}>Standard Baseline (VLSFO Standard Route):</span>
               <span style={{ color: 'var(--text-secondary)' }}>{co2Baseline.toLocaleString()} tonnes CO₂</span>
             </div>
-            <div style={{ width: '100%', height: '8px', backgroundColor: 'rgba(255, 255, 255, 0.08)', borderRadius: '4px', overflow: 'hidden' }}>
+            <div style={{ width: '100%', height: '8px', backgroundColor: 'var(--border-subtle)', borderRadius: '4px', overflow: 'hidden' }}>
               <div style={{ width: '100%', height: '100%', backgroundColor: '#64748b' }} />
             </div>
           </div>
@@ -121,14 +121,14 @@ export const EmissionsAndCost = () => {
           {/* QEA Optimized Bar */}
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', fontFamily: 'var(--font-mono)', marginBottom: '3px' }}>
-              <span style={{ color: '#ffffff', fontWeight: 600 }}>Eco-Fleet Quantum-Optimized Plan:</span>
+              <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Eco-Fleet Quantum-Optimized Plan:</span>
               <span style={{ color: 'var(--accent-green)', fontWeight: 600 }}>{co2.toLocaleString()} tonnes CO₂</span>
             </div>
-            <div style={{ width: '100%', height: '8px', backgroundColor: 'rgba(255, 255, 255, 0.08)', borderRadius: '4px', overflow: 'hidden' }}>
+            <div style={{ width: '100%', height: '8px', backgroundColor: 'var(--border-subtle)', borderRadius: '4px', overflow: 'hidden' }}>
               <div style={{
                 width: `${Math.round((co2 / co2Baseline) * 100)}%`,
                 height: '100%',
-                background: 'linear-gradient(90deg, #00f0ff 0%, #00e5a3 100%)'
+                backgroundColor: 'var(--accent-green)'
               }} />
             </div>
           </div>
@@ -142,14 +142,14 @@ export const EmissionsAndCost = () => {
             fontFamily: 'var(--font-mono)',
             fontSize: '11px'
           }}>
-            <div style={{ padding: '8px', backgroundColor: 'rgba(5, 12, 22, 0.65)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
+            <div style={{ padding: '8px', backgroundColor: 'var(--bg-inset)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
               <div style={{ color: 'var(--text-muted)', fontSize: '9.5px' }}>NET CO₂ SAVED</div>
               <div style={{ color: 'var(--accent-green)', fontSize: '14px', fontWeight: 700, marginTop: '2px' }}>
                 {(co2Baseline - co2).toLocaleString()} t
               </div>
             </div>
 
-            <div style={{ padding: '8px', backgroundColor: 'rgba(5, 12, 22, 0.65)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
+            <div style={{ padding: '8px', backgroundColor: 'var(--bg-inset)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
               <div style={{ color: 'var(--text-muted)', fontSize: '9.5px' }}>WELL-TO-WAKE FACTOR</div>
               <div style={{ color: 'var(--accent-cyan)', fontSize: '14px', fontWeight: 700, marginTop: '2px' }}>
                 {fuel.wtwEmissions} t CO₂e / t
