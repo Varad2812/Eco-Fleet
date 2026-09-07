@@ -132,7 +132,7 @@ eco-fleet/
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/Varad2111/eco-fleet.git
+   git clone https://github.com/Varad2812/eco-fleet.git
    cd eco-fleet
    ```
 
